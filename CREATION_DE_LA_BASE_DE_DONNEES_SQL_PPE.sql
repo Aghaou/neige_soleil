@@ -15,7 +15,7 @@ CREATE TABLE users (
     PRIMARY KEY(id_u)
 );
 
-CREATE TABLE Proprietaire(
+CREATE TABLE proprietaire(
     IdP int(10) AUTO_INCREMENT,
     nomP VARCHAR(30),
     prenomP VARCHAR(30),
@@ -25,7 +25,7 @@ CREATE TABLE Proprietaire(
     PRIMARY KEY(IdP)
 );
 
-CREATE TABLE Client(
+CREATE TABLE client(
     idClient int(10) AUTO_INCREMENT NOT NULL,
     nomClient VARCHAR(30),
     prenomClient VARCHAR(30),
@@ -34,7 +34,7 @@ CREATE TABLE Client(
     PRIMARY KEY(idClient)
 );
 
-CREATE TABLE Region(
+CREATE TABLE region(
     idR int(10) AUTO_INCREMENT,
     NomR VARCHAR(50),
     PRIMARY KEY(idR)
@@ -46,7 +46,7 @@ CREATE TABLE categorie_hab(
     PRIMARY KEY(id_cat)
 );
 
-CREATE TABLE StationDeSki(
+CREATE TABLE stationDeSki(
     IDSDS int(10) AUTO_INCREMENT,
     NomSDS VARCHAR(30),
     idR int(10) NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE contrat_proprietaire(
     FOREIGN KEY(IdP) REFERENCES Proprietaire(IdP)
 );
 
-CREATE TABLE Reservation(
+CREATE TABLE reservation(
     idResa int(10) AUTO_INCREMENT ,
     DateD date NOT NULL,
     DateF date Not Null,
@@ -97,7 +97,7 @@ CREATE TABLE Reservation(
 
 
 
-CREATE TABLE Contrat(
+CREATE TABLE contrat(
     Id_Contrat int(10) AUTO_INCREMENT,
     idResa int(10) ,
     PRIMARY KEY(Id_Contrat), 
@@ -107,7 +107,7 @@ CREATE TABLE Contrat(
 
 
 
-    INSERT INTO `region` (`NomR`) VALUES
+    INSERT INTO region (NomR) VALUES
     ('Auvergne-Rhone-Alpes'),
     ('Bourgogne-Franche-Comte'),
     ('Bretagne'),
@@ -122,7 +122,7 @@ CREATE TABLE Contrat(
     ('Pays de la Loire'),
     ('Provence-Alpes-Cote d''Azur');
 
-INSERT INTO `categorie_hab` (`nom_cat`) VALUES
+INSERT INTO categorie_hab(nom_cat) VALUES
 ('maison'),
 ('appartement'),
 ('chalet');
